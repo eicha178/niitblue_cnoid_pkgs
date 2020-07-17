@@ -1,0 +1,153 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: Turtle
+rootLink: base_link
+
+
+GREEN: &GREEN
+  material:
+    diffuseColor: [ 0, 0.75, 0 ]
+    specularColor: [ 0, 0, 0 ]
+    shinines: 0
+
+DARK_GRAY: &DARK_GRAY
+  material:
+    diffuseColor: [ 0.25, 0.25, 0.25 ]
+    specularColor: [ 0, 0, 0 ]
+    shinines: 0
+
+
+links:
+  -
+    name: base_link
+    translation: [ 0, 0, 0.076 ]
+    mass: 0.9
+    jointType: free
+    inertia: [
+      0.1, 0,    0,
+      0,   0.1,  0,
+      0,   0,  0.5 ]
+    elements:
+      -
+        type: Collision
+        elements: &base_link
+          -
+            type: Shape
+            rotation: [ 1, 0, 0, 90]
+            geometry: { type: Cylinder, radius: 0.064, height: 0.142 }
+            appearance: *GREEN
+      -
+        type: Visual
+        elements: *base_link
+      -
+        type: AccelerationSensor
+        name: ACCEL_SENSOR
+        id: 0 
+      -
+        type: RateGyroSensor
+        name: GYRO
+        id: 0
+
+  -
+    name: WHEEL_L
+    parent: base_link
+    translation: [ 0.033, 0.08, -0.048]
+    mass: 0.1
+    jointType: revolute
+    jointAxis: Y
+    jointRange: unlimited
+    material: TankTracks
+    inertia: [
+      0.01, 0,   0,
+      0,   0.01, 0,
+      0,   0,   0.01 ]
+    elements:
+      -
+        type: Collision
+        elements: &WHEEL_L
+          -
+            type: Shape
+            geometry: { type: Cylinder, radius: 0.033, height: 0.018 }
+            appearance: *DARK_GRAY
+      -
+        type: Visual
+        elements: *WHEEL_L
+  -
+    name: WHEEL_R
+    parent: base_link
+    translation: [ 0.033, -0.08, -0.048]
+    rotation: [ 0, 0, 1, 180]
+    mass: 0.1
+    jointType: revolute
+    jointAxis: -Y
+    jointRange: unlimited
+    material: TankTracks
+    inertia: [
+      0.01, 0,   0,
+      0,   0.01, 0,
+      0,   0,   0.01 ]
+    elements:
+      -
+        type: Collision
+        elements: &WHEEL_R
+          -
+            type: Shape
+            geometry: { type: Cylinder, radius: 0.033, height: 0.018 }
+            appearance: *DARK_GRAY
+      -
+        type: Visual
+        elements: *WHEEL_R
+  -
+    name: CASTER
+    parent: base_link
+    translation: [ -0.05, 0, -0.076 ]
+    inertia: [
+      0.01, 0,   0,
+      0,   0.01, 0,
+      0,   0,   0.01 ]
+    elements:
+      -
+        type: Collision
+        elements: &CASTER
+          -
+            type: Shape
+            geometry: { type: Sphere, radius: 0.005 }
+            appearance: *DARK_GRAY
+      -
+        type: Visual
+        elements: *CASTER
+
+  -
+    name: LRF
+    parent: base_link
+    translation: [ 0.01, 0, 0.101 ]
+    elements:
+      -
+        type: Collision
+        elements: &LRF
+          -
+            type: Shape
+            geometry: { type: Cylinder, radius: 0.032, height: 0.02 }
+            rotation: [1, 0, 0, 90]
+            appearance: *DARK_GRAY
+      -
+        type: Visual
+        elements: *LRF
+
+
+      -
+        type: Transform
+        elements:
+          -
+            type: RangeSensor
+            name: LRF
+            translation: [ 0, 0, 0.1 ]
+            rotation: [ [ 1, 0, 0, 90 ], [ 0, 1, 0, -90 ] ]
+            yawRange: 360.0
+            yawStep:  0.4
+            pitchRange: 1.0
+            pitchStep: 2.0
+            scanRate:  5
+            maxDistance: 3.5 
+            on: true

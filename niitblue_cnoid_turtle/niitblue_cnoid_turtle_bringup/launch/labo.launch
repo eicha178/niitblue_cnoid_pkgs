@@ -1,0 +1,7 @@
+<launch>
+  <!-- Choreonoid ROS -->
+  <node name="choreonoid_ros" pkg="choreonoid_ros" type="choreonoid" args="$(find niitblue_cnoid_turtle_bringup)/project/Turtle-labo.cnoid"/>
+
+  <!-- ROS Control -->
+  <include file="$(find niitblue_cnoid_turtle_control)/launch/control.launch"/>
+</launch>

@@ -1,0 +1,46 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: turtlebot3_wall
+
+links:
+  -
+    name: Base
+    translation: [ 0.0, 0.0, 0.0 ]
+    jointType: fixed
+    elements:
+      -
+        type: Transform
+        name: Wall1
+        translation: [ 5.15, -2.98, 0.6 ]
+        rotation: [ 0.0, 0.0, 1.0, 60 ]
+        elements: &Wall1
+          Shape: { geometry: { type: Box, size: [ 7.0, 0.2, 1.2 ] } }
+      -
+        type: Transform
+        name: Wall2
+        translation: [ 0.0, -5.955, 0.6 ]
+        elements: *Wall1
+      -
+        type: Transform
+        name: Wall3
+        translation: [ -5.15, -2.98, 0.6 ]
+        rotation: [ 0.0, 0.0, 1.0, -60 ]
+        elements: *Wall1
+      -
+        type: Transform
+        name: Wall4
+        translation: [ -5.15, 2.98, 0.6 ]
+        rotation: [ 0.0, 0.0, 1.0, 60 ]
+        elements: *Wall1
+      -
+        type: Transform
+        name: Wall5
+        translation: [ 0.0, 5.955, 0.6 ]
+        elements: *Wall1
+      -
+        type: Transform
+        name: Wall6
+        translation: [ 5.15, 2.98, 0.6 ]
+        rotation: [ 0.0, 0.0, 1.0, -60 ]
+        elements: *Wall1

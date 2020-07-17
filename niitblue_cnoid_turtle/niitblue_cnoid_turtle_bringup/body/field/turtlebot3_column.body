@@ -1,0 +1,67 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: turtlebot3_column
+
+links:
+  -
+    name: Base
+    translation: [ 0.0, 0.0, 0.0 ]
+    jointType: fixed
+    elements:
+      -
+        type: Transform
+        name: Column1
+        translation: [ 0.0, 0.0, 0.5 ]
+        rotation: [ 1.0, 0.0, 0.0, 90 ]
+        elements: &Column1
+          Shape: { geometry: { type: Cylinder, radius: 0.3, height: 1.0 } }
+      -
+        type: Transform
+        name: Column2
+        translation: [ 0.0, 3.0, 0.5 ]
+        rotation: [ 1.0, 0.0, 0.0, 90 ]
+        elements: *Column1
+      -
+        type: Transform
+        name: Column3
+        translation: [ 3.0, 3.0, 0.5 ]
+        rotation: [ 1.0, 0.0, 0.0, 90 ]
+        elements: *Column1
+      -
+        type: Transform
+        name: Column4
+        translation: [ 3.0, 0.0, 0.5 ]
+        rotation: [ 1.0, 0.0, 0.0, 90 ]
+        elements: *Column1
+      -
+        type: Transform
+        name: Column5
+        translation: [ 3.0, -3.0, 0.5 ]
+        rotation: [ 1.0, 0.0, 0.0, 90 ]
+        elements: *Column1
+      -
+        type: Transform
+        name: Column6
+        translation: [ 0.0, -3.0, 0.5 ]
+        rotation: [ 1.0, 0.0, 0.0, 90 ]
+        elements: *Column1
+      -
+        type: Transform
+        name: Column7
+        translation: [ -3.0, -3.0, 0.5 ]
+        rotation: [ 1.0, 0.0, 0.0, 90 ]
+        elements: *Column1
+      -
+        type: Transform
+        name: Column8
+        translation: [ -3.0, 0.0, 0.5 ]
+        rotation: [ 1.0, 0.0, 0.0, 90 ]
+        elements: *Column1
+      -
+        type: Transform
+        name: Column9
+        translation: [ -3.0, 3.0, 0.5 ]
+        rotation: [ 1.0, 0.0, 0.0, 90 ]
+        elements: *Column1
+

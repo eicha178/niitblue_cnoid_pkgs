@@ -1,0 +1,4 @@
+<launch>
+  <arg name="rviz_config" default="$(find niitblue_cnoid_turtle_description)/launch/config/display.rviz"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_config)"/>
+</launch>

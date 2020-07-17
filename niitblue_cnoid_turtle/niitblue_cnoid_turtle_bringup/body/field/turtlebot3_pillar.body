@@ -1,0 +1,43 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: turtlebot3_pillar
+
+links:
+  -
+    name: Base
+    translation: [ 0.0, 0.0, 0.0 ]
+    jointType: fixed
+    elements:
+      -
+        type: Transform
+        name: Pillar1
+        translation: [ 7.25, 0.0, 0.75 ]
+        rotation: [ 0.0, 0.0, 1.0, 45 ]
+        elements:
+          Shape: { geometry: { type: Box, size: [ 2.0, 2.0, 1.5 ] } }
+      -
+        type: Transform
+        name: Pillar2
+        translation: [ 3.5, -5.8, 0.75 ]
+        rotation: [ 0.0, 0.0, 1.0, 30 ]
+        elements: &Pillar2
+          Shape: { geometry: { type: Box, size: [ 1.0, 1.0, 1.5 ] } }
+      -
+        type: Transform
+        name: Pillar3
+        translation: [ -3.5, -5.8, 0.75 ]
+        rotation: [ 0.0, 0.0, 1.0, 60 ]
+        elements: *Pillar2
+      -
+        type: Transform
+        name: Pillar4
+        translation: [ -3.5, 5.8, 0.75 ]
+        rotation: [ 0.0, 0.0, 1.0, 30 ]
+        elements: *Pillar2
+      -
+        type: Transform
+        name: Pillar5
+        translation: [ 3.5, 5.8, 0.75 ]
+        rotation: [ 0.0, 0.0, 1.0, 60 ]
+        elements: *Pillar2

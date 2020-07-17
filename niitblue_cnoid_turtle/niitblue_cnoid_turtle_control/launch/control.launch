@@ -1,0 +1,18 @@
+<launch>
+  <arg name="model" default="$(find niitblue_cnoid_turtle_description)/urdf/Turtle.urdf"/>
+
+  <param name="use_sim_time" value="true"/>
+
+  <!-- robot description -->
+  <param name="/Turtle/robot_description" textfile="$(arg model)" />
+
+  <!-- state publisher -->
+  <node ns="Turtle" name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true"/>
+
+  <!-- load the controllers -->
+  <rosparam file="$(find niitblue_cnoid_turtle_control)/config/diff_drive_control.yaml" command="load"/>
+  <node name="turtle_controller_spawner" pkg="controller_manager"
+                type="spawner" output="screen" respawn="true"
+                args="--namespace Turtle
+              base_controller"/>
+</launch>

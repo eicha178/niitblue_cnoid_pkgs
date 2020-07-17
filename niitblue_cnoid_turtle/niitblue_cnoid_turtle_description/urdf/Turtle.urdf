@@ -1,0 +1,129 @@
+<robot name="niitblue_turtle">
+
+  <link name="base_footprint"/>
+
+  <joint name="base_link" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+  </joint>
+
+  <link name="base_link">
+    <origin xyz="0 0 0.076" rpy="0 0 0"/>
+    <visual>
+      <geometry>
+        <cylinder length="0.142" radius="0.064" />
+      </geometry>
+      <material name="green">
+        <color rgba="0.0 0.75 0.0 2.0"/>
+      </material>
+    </visual>
+  </link>
+
+
+  <joint name="ACCEL_SENSOR" type="fixed">
+    <parent link="base_link"/>
+    <child link="ACCEL_SENSOR"/>
+  </joint>
+  <link name="ACCEL_SENSOR"/>
+
+  <joint name="GYRO" type="fixed">
+    <parent link="base_link"/>
+    <child link="GYRO"/>
+  </joint>
+  <link name="GYRO"/>
+
+  <joint name="WHEEL_L" type="continuous">
+    <origin xyz="0.033 0.08 -0.048"/>
+    <parent link="base_link"/>
+    <child link="WHEEL_L0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <link name="WHEEL_L0">
+    <visual>
+      <geometry>
+        <cylinder length="0.018" radius="0.033" />
+      </geometry>
+      <origin rpy="1.57 0 0"/>
+      <material name="dark_gray">
+        <color rgba="0.25 0.25 0.25 2.0"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="WHEEL_R" type="continuous">
+    <origin xyz="0.033 -0.08 -0.048" rpy="3.14 0 0"/>
+    <parent link="base_link"/>
+    <child link="WHEEL_R0"/>
+    <axis xyz="0 -1 0"/>
+  </joint>
+
+  <link name="WHEEL_R0">
+    <visual>
+      <geometry>
+        <cylinder length="0.018" radius="0.033" />
+      </geometry>
+      <origin rpy="1.57 0 0"/>
+
+      <material name="dark_gray">
+        <color rgba="0.25 0.25 0.25 2.0"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="base_link_to_CASTER" type="fixed">
+    <origin xyz="-0.05 0 -0.076" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="CASTER"/>
+  </joint>
+
+  <link name="CASTER">
+    <visual>
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+      <material name="dark_gray">
+        <color rgba="0.25 0.25 0.25 2.0"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="LRF" type="fixed">
+    <origin xyz="0.01 0 0.101" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="LRF"/>
+  </joint>
+
+  <link name="LRF">
+    <visual>
+      <geometry>
+        <cylinder length="0.02" radius="0.032" />
+      </geometry>
+      <material name="dark_gray">
+        <color rgba="0.25 0.25 0.25 2.0"/>
+      </material>
+    </visual>
+  </link>
+
+
+  <transmission name="WHEEL_L_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="WHEEL_L">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="WHEEL_L_motor">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="WHEEL_R_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="WHEEL_R">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="WHEEL_R_motor">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+</robot>
