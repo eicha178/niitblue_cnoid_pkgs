@@ -1,0 +1,174 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: turtlebot3_world
+
+links:
+  -
+    name: Base
+    translation: [ 0, 0, 0 ]
+    jointType: fixed
+    elements:
+      -
+        type: Transform
+        scale: [ 0.5, 0.5, 0.5 ]
+        elements:
+          -
+            type: Transform
+            name: Floor
+            translation: [ 0, 0, -0.1 ]
+            jointType: fixed
+            material: Ground
+            AMOR: true
+            elements:
+              Shape:
+                geometry: { type: Box, size: [ 20.0, 20.0, 0.1 ] }
+                appearance: { material: { diffuseColor: [ 0.6, 0.6, 0.6 ] } }
+          -
+            type: Transform
+            name: Column1
+            translation:  [ 0.0, 0.0, 0.5 ]
+            rotation: [ 1.0, 0.0, 0.0, 90 ]
+            jointType: fixed
+            elements: &Column1
+              Shape: { geometry: { type: Cylinder, radius: 0.3, height: 1.0 } }
+          -
+            type: Transform
+            name: Column2
+            translation: [ 0.0, 3.0, 0.5 ]
+            rotation: [ 1.0, 0.0, 0.0, 90 ]
+            jointType: fixed
+            elements: *Column1
+          -
+            type: Transform
+            name: Column3
+            translation: [ 3.0, 3.0, 0.5 ]
+            rotation: [ 1.0, 0.0, 0.0, 90 ]
+            jointType: fixed
+            elements: *Column1
+          -
+            type: Transform
+            name: Column4
+            translation: [ 3.0, 0.0, 0.5 ]
+            rotation: [ 1.0, 0.0, 0.0, 90 ]
+            jointType: fixed
+            elements: *Column1
+          - 
+            type: Transform
+            name: Column5
+            translation: [ 3.0, -3.0, 0.5 ]
+            rotation: [ 1.0, 0.0, 0.0, 90 ]
+            jointType: fixed
+            elements: *Column1
+          -
+            type: Transform
+            name: Column6
+            translation: [ 0.0, -3.0, 0.5 ]
+            rotation: [ 1.0, 0.0, 0.0, 90 ]
+            jointType: fixed
+            elements: *Column1
+          -
+            type: Transform
+            name: Column7
+            translation: [ -3.0, -3.0, 0.5 ]
+            rotation: [ 1.0, 0.0, 0.0, 90 ]
+            jointType: fixed
+            elements: *Column1
+          -
+            type: Transform
+            name: Column8
+            translation: [ -3.0, 0.0, 0.5 ]
+            rotation: [ 1.0, 0.0, 0.0, 90 ]
+            jointType: fixed
+            elements: *Column1
+          -
+            type: Transform
+            name: Column9
+            translation: [ -3.0, 3.0, 0.5 ]
+            rotation: [ 1.0, 0.0, 0.0, 90 ]
+            jointType: fixed
+            elements: *Column1
+          -
+            type: Transform
+            name: Wall1
+            translation: [ 5.15, -2.98, 0.6 ]
+            rotation: [ 0.0, 0.0, 1.0, 60 ]
+            jointType: fixed
+            elements: &Wall1
+              Shape: 
+                geometry: { type: Box, size: [ 7.0, 0.2, 1.2 ] }
+                appearance: { material: { diffuseColor: [ 0, 0, 0 ] } } 
+          -
+            type: Transform
+            name: Wall2
+            translation: [ 0.0, -5.955, 0.6 ]
+            jointType: fixed
+            elements: *Wall1
+          -
+            type: Transform
+            name: Wall3
+            translation: [ -5.15, -2.98, 0.6 ]
+            rotation: [ 0.0, 0.0, 1.0, -60 ]
+            jointType: fixed
+            elements: *Wall1
+          -
+            type: Transform
+            name: Wall4
+            translation: [ -5.15, 2.98, 0.6 ]
+            rotation: [ 0.0, 0.0, 1.0, 60 ]
+            jointType: fixed
+            elements: *Wall1
+          -
+            type: Transform
+            name: Wall5
+            translation: [ 0.0, 5.955, 0.6 ]
+            jointType: fixed
+            elements: *Wall1
+          -
+            type: Transform
+            name: Wall6
+            translation: [ 5.15, 2.98, 0.6 ]
+            rotation: [ 0.0, 0.0, 1.0, -60 ]
+            jointType: fixed
+            elements: *Wall1
+          -
+            type: Transform
+            name: Pillar1
+            translation: [ 7.25, 0.0, 0.75 ]
+            rotation: [ 0.0, 0.0, 1.0, 45 ]
+            jointType: fixed
+            elements:
+              Shape: 
+                geometry: { type: Box, size: [ 2.0, 2.0, 1.5 ] }
+                appearance: { material: { diffuseColor: [ 0.0, 1.0, 0.0 ] } }
+          -
+            type: Transform
+            name: Pillar2
+            translation: [ 3.5, -5.8, 0.75 ]
+            rotation: [ 0.0, 0.0, 1.0, 30 ]
+            jointType: fixed
+            elements: &Pillar2
+              Shape:
+                geometry: { type: Box, size: [ 1.0, 1.0, 1.5 ] }
+                appearance: { material: { diffuseColor: [ 0.0, 1.0, 0.0 ] } }
+          -
+            type: Transform
+            name: Pillar3
+            translation: [ -3.5, -5.8, 0.75 ]
+            rotation: [ 0.0, 0.0, 1.0, 60 ]
+            jointType: fixed
+            elements: *Pillar2
+          -
+            type: Transform
+            name: Pillar4
+            translation: [ -3.5, 5.8, 0.75 ]
+            rotation: [ 0.0, 0.0, 1.0, 30 ]
+            jointType: fixed
+            elements: *Pillar2
+          -
+            type: Transform
+            name: Pillar5
+            translation: [ 3.5, 5.8, 0.75 ]
+            rotation: [ 0.0, 0.0, 1.0, 60 ]
+            jointType: fixed
+            elements: *Pillar2

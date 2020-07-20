@@ -145,7 +145,8 @@ links:
             translation: [ 0, 0, 0.1 ]
             rotation: [ [ 1, 0, 0, 90 ], [ 0, 1, 0, -90 ] ]
             yawRange: 360.0
-            yawStep:  0.4
+            #yawStep:  0.4
+            yawStep:  1.0
             pitchRange: 1.0
             pitchStep: 2.0
             scanRate:  5
