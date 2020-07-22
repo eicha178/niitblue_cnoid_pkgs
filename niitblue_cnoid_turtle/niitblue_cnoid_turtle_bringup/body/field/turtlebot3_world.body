@@ -27,7 +27,7 @@ links:
         rotation: [ 1.0, 0.0, 0.0, 90 ]
         jointType: fixed
         elements: &Column1
-          Shape: { geometry: { type: Cylinder, radius: 0.3, height: 1.0 } }
+          Shape: { geometry: { type: Cylinder, radius: 0.6, height: 1.0 } }
       -
         type: Transform
         name: Column2

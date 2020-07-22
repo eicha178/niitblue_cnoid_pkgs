@@ -22,12 +22,13 @@ links:
   -
     name: base_link
     translation: [ 0, 0, 0.076 ]
-    mass: 0.9
     jointType: free
+    mass: 0.9
+    centerOfMass: [ 0, 0, -0.38]
     inertia: [
-      0.1, 0,    0,
-      0,   0.1,  0,
-      0,   0,  0.5 ]
+      0.1, 0,   0,
+      0,   0.1, 0,
+      0,   0,   0.5 ]
     elements:
       -
         type: Collision
@@ -48,6 +49,11 @@ links:
         type: RateGyroSensor
         name: GYRO
         id: 0
+  -
+    name: base_footprint
+    parent: base_link
+    jointType: fixed
+    translation: [ 0, 0, -0.076 ]
 
   -
     name: WHEEL_L
@@ -58,6 +64,7 @@ links:
     jointAxis: Y
     jointRange: unlimited
     material: TankTracks
+    #actuationMode: jointSurfaceVelocity
     inertia: [
       0.01, 0,   0,
       0,   0.01, 0,
@@ -83,6 +90,7 @@ links:
     jointAxis: -Y
     jointRange: unlimited
     material: TankTracks
+    #actuationMode: jointSurfaceVelocity
     inertia: [
       0.01, 0,   0,
       0,   0.01, 0,
@@ -102,6 +110,8 @@ links:
     name: CASTER
     parent: base_link
     translation: [ -0.05, 0, -0.076 ]
+    mass: 0.005
+    material: BallCaster
     inertia: [
       0.01, 0,   0,
       0,   0.01, 0,
@@ -151,4 +161,5 @@ links:
             pitchStep: 2.0
             scanRate:  5
             maxDistance: 3.5 
+            minDistance: 0.12
             on: true

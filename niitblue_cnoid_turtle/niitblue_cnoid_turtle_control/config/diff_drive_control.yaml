@@ -11,7 +11,7 @@ Turtle:
     wheel_separation_multiplier: 1.0
     wheel_radius_multiplier    : 1.0
     cmd_vel_timeout : 1.0
-    enable_odom_tf  : false
+    enable_odom_tf  : true
     linear:
       x:
         has_velocity_limits     : true
@@ -23,8 +23,10 @@ Turtle:
     angular:
       z:
         haz_velocity_limits     : true
-        max_velocity            :  6.28 # rad/s
-        min_velocity            : -6.28 # rad/s
+        #max_velocity            :  6.28 # rad/s
+        #min_velocity            : -6.28 # rad/s
+        max_velocity            :  3.14 # rad/s
+        min_velocity            : -3.14 # rad/s
         has_acceleration_limits : true
-        max_acceleration        :  1.57 # rad/s^2
-        min_acceleration        : -1.57 # rad/s^2
+        max_acceleration        :  0.785 # rad/s^2
+        min_acceleration        : -0.785 # rad/s^2

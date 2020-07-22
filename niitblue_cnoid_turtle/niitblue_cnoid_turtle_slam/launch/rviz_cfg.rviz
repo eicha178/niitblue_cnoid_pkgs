@@ -5,7 +5,6 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /TF1/Status1
         - /TF1/Frames1
         - /Map1
         - /Path1
@@ -295,10 +294,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5403975248336792
+      Pitch: 0.5553975105285645
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.187208652496338
+      Yaw: 3.752202272415161
     Saved: ~
 Window Geometry:
   Displays:

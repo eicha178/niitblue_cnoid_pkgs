@@ -82,14 +82,14 @@ items:
           data: 
             file: "../body/robot/Turtle.body"
             format: CHOREONOID-BODY
-            rootPosition: [ 2, 0.5, 0.08 ]
+            rootPosition: [ 2, 0.7, 0.08 ]
             rootAttitude: [ 
               -0.999999119, -2.76520189e-07, 0.00132752887, 
               2.7479151e-07, -1, -1.30236026e-06, 
               0.00132752887, -1.30199432e-06, 0.999999119 ]
             jointDisplacements: [ 0, 0 ]
             jointPositions: [ 0, 0 ]
-            initialRootPosition: [ 2, 0.5, 0.08 ]
+            initialRootPosition: [ 2, 0.7, 0.08 ]
             initialRootAttitude: [ 
               -0.999999119, -2.76520189e-07, 0.00132752887, 
               2.7479151e-07, -1, -1.30236026e-06, 
@@ -215,9 +215,9 @@ views:
           fieldOfView: 0.698132
           near: 0.01
           far: 100
-          eye: [ 5.40131, 3.99636, 5.26072 ]
-          direction: [ -0.673762, -0.446043, -0.589144 ]
-          up: [ -0.491249, -0.325216, 0.808028 ]
+          eye: [ 5.65541, 2.37883, 6.28769 ]
+          direction: [ -0.644347, -0.22415, -0.731145 ]
+          up: [ -0.690554, -0.240225, 0.682222 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 12.1306
@@ -422,15 +422,15 @@ viewAreas:
         - 
           type: splitter
           orientation: vertical
-          sizes: [ 554, 377 ]
+          sizes: [ 395, 536 ]
           children: 
             - 
               type: pane
               views: [ 1 ]
             - 
               type: pane
-              views: [ 0, 7 ]
-              current: 0
+              views: [ 0, 7, 5, 6 ]
+              current: 5
         - 
           type: splitter
           orientation: vertical
@@ -438,7 +438,7 @@ viewAreas:
           children: 
             - 
               type: pane
-              views: [ 5, 6, 4, 3 ]
+              views: [ 4, 3 ]
               current: 3
             - 
               type: pane
