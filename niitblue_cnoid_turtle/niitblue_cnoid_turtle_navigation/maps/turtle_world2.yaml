@@ -1,4 +1,4 @@
-image: /home/ubuntu/map/turtle_world2.pgm
+image: ./turtle_world2.pgm
 resolution: 0.050000
 origin: [-51.224998, -51.224998, 0.000000]
 negate: 0
