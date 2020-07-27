@@ -159,6 +159,7 @@ links:
             pitchRange: 0.0
             pitchStep: 0.0
             scanRate:  5
-            maxDistance: 3.5 
+            #maxDistance: 3.5 
+            maxDistance: 7.5 
             minDistance: 0.12
             on: true

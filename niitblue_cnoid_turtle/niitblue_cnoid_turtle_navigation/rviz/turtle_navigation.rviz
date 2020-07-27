@@ -4,7 +4,6 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
-        - /RobotModel1/Status1
         - /TF1
         - /TF1/Frames1
         - /TF1/Tree1
@@ -382,11 +381,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 160.7759246826172
+      Scale: 68.11015319824219
       Target Frame: <Fixed Frame>
       Value: TopDownOrtho (rviz)
-      X: 1.876570463180542
-      Y: 0.3065028786659241
+      X: 3.9698421955108643
+      Y: 0.40800172090530396
     Saved: ~
 Window Geometry:
   Displays:
